@@ -1,0 +1,8 @@
+Stop all containers:
+docker stop $(docker ps -a -q)
+
+Remove all containers:
+docker rm $(docker ps -a -q)
+
+Remove unused images:
+docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
