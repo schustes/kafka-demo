@@ -1,5 +1,6 @@
 # Kafka Demo mit Vagrant und AWS #
 
+
 ## Demo app lokal testen ##
 
 #### Kafka Setup ####
