@@ -16,6 +16,7 @@
   Empfangene Nachrichten lesen (löscht Puffer):GET http://localhost:8080/kafkademo/messages/consumer
   
 ## Mit Vagrant auf die AWS pushen ##
+
 Vagrant installieren: https://www.vagrantup.com/downloads.html
 - Das vagrant file liegt im Root Verzeichnis. Es müssen die Credentials korrekt gesetzt werden.
 - vagrant ...
