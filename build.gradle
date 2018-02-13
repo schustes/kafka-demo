@@ -61,5 +61,8 @@ task distDocker (type: Docker) {
     dockerfile = 'Dockerfile'
 }
 
+bootRun {
+  systemProperties = System.properties
+}
 
 
