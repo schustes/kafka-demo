@@ -17,3 +17,5 @@
 *.ipr
 
 /out/
+
+docker/*.jar
