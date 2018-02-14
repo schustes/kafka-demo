@@ -1,53 +1,20 @@
-discrimination-discovery:
+kafka:
   mem_limit: 1024m
   cpuset: "0,1"
-  image: "discrimination-discovery:1.0"
-  hostname: discrimination-discovery
+  image: "spotify/kafka:latest"
+  hostname: kafka
   ports:
-    - "9861:9861"
+    - "9092:9092"
 
-discrimination-config:
-  mem_limit: 1536m
+demo:
+  mem_limit: 1024m
   cpuset: "0,1"
-  image: "discrimination-config:1.0"
-  hostname: discrimination-config
+  image: "kafa-demo:latest"
+  hostname: kafka-demo
   environment:
     DOCKER_COMPOSE: 'true'
-    EUREKA_HOST: discrimination-discovery
-    EUREKA_PORT: 9861
   links:
-    - discrimination-discovery
+    - kafka
   ports:
-    - "9888:9888"
-
-discrimination-application:
-  mem_limit: 512m
-  cpuset: "0,1,2"
-  image: "discrimination-application:1.0"
-  hostname: discrimination-application
-  environment:
-    DOCKER_COMPOSE: 'true'
-    EUREKA_HOST: discrimination-discovery
-    EUREKA_PORT: 9861
-  links:
-    - discrimination-discovery
-    - discrimination-config
-  ports:
-    - "9100:9100"
-
-discrimination-gateway:
-  cpuset: "0,1,2"
-  mem_limit: 512m
-  image: "discrimination-gateway:1.0"
-  hostname: discrimination-gateway
-  environment:
-    DOCKER_COMPOSE: 'true'
-    EUREKA_HOST: discrimination-discovery
-    EUREKA_PORT: 9861
-  links:
-    - discrimination-discovery
-    - discrimination-config
-    - discrimination-application
-  ports:
-    - "9865:9865"
+    - "12001:12001"
 

@@ -1,15 +1,13 @@
 #!/bin/bash
 
-export DOCKER_HOST="tcp://127.0.0.1:2375"
+export DOCKER_HOST="tcp://192.168.56.1:2375"
 
 docker-compose stop
 
-names=(personal-accounting-application:0.0.1 
-personal-accounting-config-server:0.0.1 
-personal-accounting-gateway:0.0.1 
-personal-accounting-taxcaculator:0.0.1 
-personal-accounting-discovery:0.0.1 
-personal-accounting-discovery:0.0.1)
+names=(kafka-demo:latest
+       , spotify/kafka:latest
+ )
+
 
 for index in "${!names[@]}"; do
  echo $(docker stop $(docker ps -a -q -f ancestor=${names[$index]}))
