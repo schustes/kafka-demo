@@ -1,4 +1,4 @@
-# Kafka Simple Demo#
+# Kafka Simple Demo #
 
 
 ## Demo app lokal testen ##
