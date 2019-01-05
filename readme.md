@@ -1,4 +1,4 @@
-# Kafka Demo mit Vagrant und AWS #
+# Kafka Simple Demo#
 
 
 ## Demo app lokal testen ##
